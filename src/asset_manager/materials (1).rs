@@ -1,7 +1,7 @@
 //! Module to handle materials
 
-use crate::vulkan_wrapper::texture::Texture;
 use uuid::Uuid;
+use crate::vulkan_wrapper::texture::Texture;
 
 pub struct Material {
     pub id: Uuid,
@@ -11,8 +11,8 @@ pub struct Material {
 impl Material {
     pub fn new(texture: Texture) -> Material {
         Material {
-            id: Uuid::new_v4(),
-            texture,
+        id: Uuid::new_v4(),
+        texture: texture,
         }
     }
 }
@@ -31,8 +31,11 @@ mod test {
 
     #[test]
     fn test_material_constructor() {
-        let mat = Material::new(Texture::GreyWall);
+        let mat = Material::new(
+            Texture::GreyWall,
+        );
         assert_eq!(mat.id.is_nil(), false);
         assert_eq!(mat.texture == Texture::GreyWall, true);
     }
 }
+

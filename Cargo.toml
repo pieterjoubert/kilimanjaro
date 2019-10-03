@@ -1,5 +1,5 @@
 [package]
-name = "engine_00"
+name = "kilimanjaro"
 version = "0.1.0"
 authors = ["Pieter Joubert <pieter.joubert@gmail.com>"]
 edition = "2018"
@@ -7,4 +7,7 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+cgmath = "0.14.0"
+clap = "2.33.0"
 vulkano = "0.4.0"
+uuid = { version = "0.7", features = ["serde", "v4"] }
